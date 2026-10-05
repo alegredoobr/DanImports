@@ -1,0 +1,1011 @@
+[
+  {
+    "key": "foto-01",
+    "source_name": "Retinal Shot",
+    "target_name": "Retinal Shot",
+    "review": "",
+    "files": [
+      "/importacao/foto-01.jpg"
+    ],
+    "description": "Sérum facial Celimax Retinal Shot, em apresentação de 15 ml. A imagem informa retinal 0,1%, panthenol 1% e Matrixyl 3000 3%.",
+    "olfactory_family": "",
+    "olfactory_notes": "",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "cuidados-retinal-shot"
+  },
+  {
+    "key": "foto-02",
+    "source_name": "Body Cream Asad",
+    "target_name": "Body Cream Asad",
+    "review": "",
+    "files": [
+      "/importacao/foto-02.jpg"
+    ],
+    "description": "Creme corporal Asad Afeer de 250 g, com uma combinação perfumada de madeiras, âmbar e especiarias.",
+    "olfactory_family": "Amadeirado oriental",
+    "olfactory_notes": "Oud, âmbar, especiarias, madeiras e notas doces.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "cuidados-body-cream-asad"
+  },
+  {
+    "key": "foto-04",
+    "source_name": "Club de Nuit Woman",
+    "target_name": "Club de Nuit Woman",
+    "review": "",
+    "files": [
+      "/importacao/foto-04.jpg"
+    ],
+    "description": "Uma combinação floral e frutada, com abertura cítrica, coração de flores e uma base suave de baunilha e almíscar.",
+    "olfactory_family": "Floral",
+    "olfactory_notes": "",
+    "top_notes": "Bergamota, toranja, pêssego e laranja.",
+    "heart_notes": "Gerânio, jasmim, lichia e rosa.",
+    "base_notes": "Almíscar, patchouli, baunilha e vetiver.",
+    "target_slug": "feminino-club-de-nuit-woman"
+  },
+  {
+    "key": "foto-05",
+    "source_name": "Club de Nuit Maleka",
+    "target_name": "Club de Nuit Maleka",
+    "review": "",
+    "files": [
+      "/importacao/foto-05.jpg"
+    ],
+    "description": "Frutas vermelhas e cítricos encontram flores delicadas, sobre uma base doce e envolvente de baunilha, âmbar e almíscar.",
+    "olfactory_family": "Floral frutado",
+    "olfactory_notes": "",
+    "top_notes": "Laranja, frutas vermelhas e bergamota.",
+    "heart_notes": "Jasmim, rosa e flor de laranjeira.",
+    "base_notes": "Baunilha, âmbar e almíscar.",
+    "target_slug": "feminino-club-de-nuit-maleka"
+  },
+  {
+    "key": "foto-06",
+    "source_name": "Pacific Aura",
+    "target_name": "Pacific Aura",
+    "review": "",
+    "files": [
+      "/importacao/foto-06.jpg"
+    ],
+    "description": "Frescor cítrico e marinho com um coração aromático e fundo amadeirado, para uma presença elegante e refrescante.",
+    "olfactory_family": "Aromático aquático",
+    "olfactory_notes": "",
+    "top_notes": "Bergamota, limão e notas marinhas.",
+    "heart_notes": "Lavanda, gerânio e notas aromáticas.",
+    "base_notes": "Âmbar, madeiras nobres, musgo e patchouli.",
+    "target_slug": "masculino-pacific-aura"
+  },
+  {
+    "key": "foto-07",
+    "source_name": "Club de Nuit Iconic",
+    "target_name": "Club de Nuit Iconic",
+    "review": "",
+    "files": [
+      "/importacao/foto-07.jpg"
+    ],
+    "description": "Cítricos vibrantes e pimenta-rosa se combinam com flores e notas marinhas, finalizando em uma base amadeirada e ambarada.",
+    "olfactory_family": "Cítrico aromático amadeirado",
+    "olfactory_notes": "",
+    "top_notes": "Bergamota, limão, frutas cítricas e pimenta-rosa.",
+    "heart_notes": "Jasmim, rosa e notas marinhas.",
+    "base_notes": "Âmbar, almíscar, madeiras e patchouli.",
+    "target_slug": "unissex-club-de-nuit-iconic"
+  },
+  {
+    "key": "foto-08",
+    "source_name": "Nocturno Elixir",
+    "target_name": "Nocturno Elixir",
+    "review": "",
+    "files": [
+      "/importacao/foto-08.jpg"
+    ],
+    "description": "Uma abertura cítrica e aromática encontra lavanda, gerânio e abacaxi, com um fundo de sândalo envolvente.",
+    "olfactory_family": "Oriental amadeirado",
+    "olfactory_notes": "",
+    "top_notes": "Raspas de limão, bergamota, hortelã e artemísia.",
+    "heart_notes": "Lavanda, gerânio e abacaxi.",
+    "base_notes": "Sândalo.",
+    "target_slug": "masculino-nocturno-elixir"
+  },
+  {
+    "key": "foto-09",
+    "source_name": "Monocline 05",
+    "target_name": "Menocline 05",
+    "review": "",
+    "files": [
+      "/importacao/foto-09.jpg"
+    ],
+    "description": "Uma fragrância de frescor vibrante, com cítricos, flores e uma assinatura amadeirada aromática.",
+    "olfactory_family": "Amadeirado aromático",
+    "olfactory_notes": "Bergamota, cardamomo, coentro, limão, mandarina, flor de laranjeira, jasmim, rosa, lírio-do-vale, sândalo, âmbar, almíscar, chá verde e cedro.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-menocline-05"
+  },
+  {
+    "key": "foto-10",
+    "source_name": "Kingsman",
+    "target_name": "Kingsman",
+    "review": "",
+    "files": [
+      "/importacao/foto-10.jpg"
+    ],
+    "description": "Uma combinação de cítricos, especiarias e lavanda, com uma base amadeirada que transmite elegância e presença.",
+    "olfactory_family": "Amadeirado aromático especiado",
+    "olfactory_notes": "Bergamota, pimenta-preta, lavanda, gerânio, madeiras nobres, patchouli, âmbar e musk.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-kingsman"
+  },
+  {
+    "key": "foto-11",
+    "source_name": "Moondrift Blue Intense",
+    "target_name": "Moondrift Blue Intense",
+    "review": "",
+    "files": [
+      "/importacao/foto-11.jpg"
+    ],
+    "description": "Frescor marinho e bergamota se unem à lavanda e a um fundo amadeirado e ambarado.",
+    "olfactory_family": "Aromático aquático amadeirado",
+    "olfactory_notes": "Notas marinhas, bergamota, lavanda, madeiras nobres e âmbar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-moondrift-blue-intense"
+  },
+  {
+    "key": "foto-12",
+    "source_name": "Olivia 30 ml",
+    "target_name": "Olivia 30 ml",
+    "review": "",
+    "files": [
+      "/importacao/foto-12.jpg"
+    ],
+    "description": "Uma composição delicada e romântica de pera e flores, com o conforto do almíscar e das madeiras.",
+    "olfactory_family": "Floral frutado amadeirado",
+    "olfactory_notes": "Bergamota, pera, rosa, jasmim, almíscar e madeiras nobres.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-olivia-30-ml"
+  },
+  {
+    "key": "foto-13",
+    "source_name": "Hawas Kobra",
+    "target_name": "Hawas Kobra",
+    "review": "",
+    "files": [
+      "/importacao/foto-13.jpg"
+    ],
+    "description": "Frescor de gengibre e cítricos, um coração de chá verde e especiarias e um fundo amadeirado envolvente.",
+    "olfactory_family": "Oriental amadeirado",
+    "olfactory_notes": "",
+    "top_notes": "Gengibre, bergamota e tangerina.",
+    "heart_notes": "Chá verde, néroli e canela.",
+    "base_notes": "Almíscar, notas amadeiradas e âmbar.",
+    "target_slug": "masculino-hawas-kobra"
+  },
+  {
+    "key": "foto-15",
+    "source_name": "Jean Lowe Fantosme",
+    "target_name": "Jean Lowe Fantasme",
+    "review": "",
+    "files": [
+      "/importacao/foto-15.jpg"
+    ],
+    "description": "Uma fragrância envolvente que combina frescor cítrico e aromático com madeiras, âmbar e baunilha.",
+    "olfactory_family": "Oriental amadeirado especiado",
+    "olfactory_notes": "Bergamota, especiarias, lavanda, gerânio, madeiras nobres, patchouli, âmbar e baunilha.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-jean-lowe-fantasme"
+  },
+  {
+    "key": "foto-16",
+    "source_name": "Al Noble Wazeer",
+    "target_name": "Al Noble Wazeer",
+    "review": "",
+    "files": [
+      "/importacao/foto-16.jpg"
+    ],
+    "description": "Madeiras e especiarias ganham a companhia do âmbar e de um toque cítrico, em uma composição marcante.",
+    "olfactory_family": "Amadeirado especiado oriental",
+    "olfactory_notes": "Notas amadeiradas, especiarias, âmbar, patchouli, aromas aromáticos e toque cítrico.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-al-noble-wazeer"
+  },
+  {
+    "key": "foto-17",
+    "source_name": "Jean Lowe Vibe",
+    "target_name": "Jean Lowe Vibe",
+    "review": "",
+    "files": [
+      "/importacao/foto-17.jpg"
+    ],
+    "description": "Cítricos e frutas tropicais encontram notas aromáticas e marinhas, sobre uma base de madeiras e âmbar.",
+    "olfactory_family": "Aromático cítrico amadeirado",
+    "olfactory_notes": "Bergamota, limão, frutas tropicais, lavanda, alecrim, notas marinhas, madeiras nobres, âmbar, musk e musgo de carvalho.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-jean-lowe-vibe"
+  },
+  {
+    "key": "foto-19",
+    "source_name": "Almamlaka",
+    "target_name": "Almamlaka",
+    "review": "",
+    "files": [
+      "/importacao/foto-19.jpg"
+    ],
+    "description": "Uma composição oriental de oud, especiarias e madeiras, com a presença quente do âmbar.",
+    "olfactory_family": "Amadeirado oriental",
+    "olfactory_notes": "Oud, especiarias, âmbar e madeiras nobres.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-almamlaka"
+  },
+  {
+    "key": "foto-20",
+    "source_name": "Alpine Homme Sport",
+    "target_name": "Alpine Homme Sport",
+    "review": "",
+    "files": [
+      "/importacao/foto-20.jpg"
+    ],
+    "description": "Frescor cítrico e marinho em uma fragrância de perfil esportivo, com fundo amadeirado e ambarado.",
+    "olfactory_family": "Aromático cítrico amadeirado",
+    "olfactory_notes": "Notas cítricas, notas marinhas, madeiras e âmbar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-alpine-homme-sport"
+  },
+  {
+    "key": "foto-22",
+    "source_name": "Pink Eclipse",
+    "target_name": "Pink Eclipse",
+    "review": "",
+    "files": [
+      "/importacao/foto-22.jpg"
+    ],
+    "description": "Frutas vermelhas e flores delicadas se combinam com baunilha, almíscar e madeiras suaves.",
+    "olfactory_family": "Floral frutado",
+    "olfactory_notes": "Frutas vermelhas, rosa, jasmim, baunilha, almíscar e madeiras suaves.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-pink-eclipse"
+  },
+  {
+    "key": "foto-23",
+    "source_name": "Philos Messenger",
+    "target_name": "",
+    "review": "Philos Messenger não consta na lista. Não é Philos Pura.",
+    "files": [
+      "/importacao/foto-23.jpg"
+    ],
+    "description": "Bergamota e especiarias em uma composição com fundo amadeirado e ambarado.",
+    "olfactory_family": "Amadeirado aromático",
+    "olfactory_notes": "Bergamota, especiarias, madeiras e âmbar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": ""
+  },
+  {
+    "key": "foto-25",
+    "source_name": "Delilah Body Cream",
+    "target_name": "",
+    "review": "Creme corporal não cadastrado. Não associar ao perfume Delilah Blanc.",
+    "files": [
+      "/importacao/foto-25.jpg"
+    ],
+    "description": "Creme corporal Delilah de 250 g, com um perfil perfumado floral e frutado.",
+    "olfactory_family": "Floral frutado",
+    "olfactory_notes": "Ruibarbo, lichia, bergamota, rosa turca, peônia, lírio, baunilha, almíscar e cashmeran.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": ""
+  },
+  {
+    "key": "foto-26",
+    "source_name": "Miss Surf Chérie",
+    "target_name": "Miss Surf Chérie",
+    "review": "",
+    "files": [
+      "/importacao/foto-26.jpg"
+    ],
+    "description": "Uma combinação feminina de frutas e flores, com um fundo quente de madeiras, âmbar e patchouli.",
+    "olfactory_family": "Chipre floral",
+    "olfactory_notes": "",
+    "top_notes": "Morango e mandarina.",
+    "heart_notes": "Jasmim e rosa.",
+    "base_notes": "Patchouli, sândalo, âmbar, musgo de carvalho e vetiver.",
+    "target_slug": "feminino-miss-surf-cherie"
+  },
+  {
+    "key": "foto-28",
+    "source_name": "Liquid Brun",
+    "target_name": "Liquid Brun",
+    "review": "",
+    "files": [
+      "/importacao/foto-28.jpg"
+    ],
+    "description": "Canela e cardamomo encontram baunilha bourbon e um fundo doce e amadeirado, em uma fragrância quente e envolvente.",
+    "olfactory_family": "Âmbar baunilha",
+    "olfactory_notes": "",
+    "top_notes": "Canela, bergamota, cardamomo e flor de laranjeira.",
+    "heart_notes": "Baunilha bourbon e elemi.",
+    "base_notes": "Almíscar, praliné, ambroxan e madeira de guaiaco.",
+    "target_slug": "unissex-liquid-brun"
+  },
+  {
+    "key": "foto-30",
+    "source_name": "Thriller",
+    "target_name": "Thriller",
+    "review": "",
+    "files": [
+      "/importacao/foto-30.jpg"
+    ],
+    "description": "Uma abertura fresca e especiada conduz a notas de couro e incenso, com um fundo quente de baunilha e sândalo.",
+    "olfactory_family": "Aromático amadeirado",
+    "olfactory_notes": "Bergamota, açafrão, pimenta, couro, incenso, baunilha e sândalo.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-thriller"
+  },
+  {
+    "key": "foto-31",
+    "source_name": "Ameerat Al Arab",
+    "target_name": "Ameerat Al Arab",
+    "review": "",
+    "files": [
+      "/importacao/foto-31.jpg"
+    ],
+    "description": "Frutas vermelhas e flores se encontram com almíscar e madeiras, em uma composição feminina envolvente.",
+    "olfactory_family": "Floral oriental",
+    "olfactory_notes": "Frutas vermelhas, rosas, flores brancas, musk e notas amadeiradas.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-ameerat-al-arab"
+  },
+  {
+    "key": "foto-32",
+    "source_name": "Tonic Ice",
+    "target_name": "",
+    "review": "Tonic Ice não consta na lista de produtos.",
+    "files": [
+      "/importacao/foto-32.jpg"
+    ],
+    "description": "Frescor cítrico e aquático com notas aromáticas e um fundo de almíscar e madeiras.",
+    "olfactory_family": "Aromático fougère",
+    "olfactory_notes": "Bergamota, mandarina, notas marinhas, notas ozônicas, lavanda, lírio-do-vale, âmbar, almíscar, patchouli e musgo de carvalho.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": ""
+  },
+  {
+    "key": "foto-33",
+    "source_name": "Delilah Blanc",
+    "target_name": "Delilah Blanc",
+    "review": "",
+    "files": [
+      "/importacao/foto-33.jpg"
+    ],
+    "description": "Cítricos e pêssego branco se combinam com flor de laranjeira e um fundo macio de almíscar e baunilha.",
+    "olfactory_family": "Floral frutado",
+    "olfactory_notes": "Bergamota, pêssego branco, mandarina, flor de laranjeira, vetiver, almíscar e baunilha.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-delilah-blanc"
+  },
+  {
+    "key": "foto-34",
+    "source_name": "Sabah Al Ward",
+    "target_name": "Sabah Al Ward",
+    "review": "As artes deste perfume trazem notas diferentes. O texto usa a arte com pirâmide (foto 34). Confira antes de selecionar.",
+    "files": [
+      "/importacao/foto-34.jpg",
+      "/importacao/foto-14.jpg"
+    ],
+    "description": "Pimenta-rosa e mandarina abrem uma composição floral com cacau, sobre uma base quente de baunilha, tonka e patchouli.",
+    "olfactory_family": "Oriental floral",
+    "olfactory_notes": "",
+    "top_notes": "Pimenta-rosa e mandarina.",
+    "heart_notes": "Flor de laranjeira, cacau e jasmim sambac.",
+    "base_notes": "Baunilha, fava tonka e patchouli.",
+    "target_slug": "feminino-sabah-al-ward"
+  },
+  {
+    "key": "foto-35",
+    "source_name": "Athena",
+    "target_name": "Athena",
+    "review": "",
+    "files": [
+      "/importacao/foto-35.jpg"
+    ],
+    "description": "Cítricos luminosos encontram flores brancas e uma base cremosa de baunilha e sândalo.",
+    "olfactory_family": "Floral",
+    "olfactory_notes": "Tangerina, pimenta-rosa, bergamota, jasmim sambac, ylang-ylang, lírio-do-vale, baunilha, sândalo e patchouli.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-athena"
+  },
+  {
+    "key": "foto-36",
+    "source_name": "Dynasty",
+    "target_name": "Dynasty",
+    "review": "",
+    "files": [
+      "/importacao/foto-36.jpg"
+    ],
+    "description": "Uma abertura fresca e especiada encontra chá rooibos e camurça, com um fundo de madeiras e cashmeran.",
+    "olfactory_family": "Amadeirado especiado",
+    "olfactory_notes": "",
+    "top_notes": "Bergamota, gengibre, sálvia esclareia, framboesa e noz-moscada.",
+    "heart_notes": "Chá rooibos e camurça.",
+    "base_notes": "Madeira de âmbar, cedro e cashmeran.",
+    "target_slug": "unissex-dynasty"
+  },
+  {
+    "key": "foto-37",
+    "source_name": "Armaf x Christian Provenzano IV",
+    "target_name": "Armaf Cristian Provenzano",
+    "review": "A foto é da versão IV. Confirme se é o Armaf Cristian Provenzano cadastrado.",
+    "files": [
+      "/importacao/foto-37.jpg"
+    ],
+    "description": "Cítricos vibrantes encontram flores e frutas, sobre uma base quente de madeiras, âmbar e baunilha.",
+    "olfactory_family": "Oriental floral",
+    "olfactory_notes": "Laranja, bergamota, limão, pimenta-rosa, tuberosa, frutas, ylang-ylang, patchouli, baunilha, almíscar, madeiras e âmbar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-armaf-cristian-provenzano"
+  },
+  {
+    "key": "foto-38",
+    "source_name": "Asad",
+    "target_name": "Asad",
+    "review": "",
+    "files": [
+      "/importacao/foto-38.jpg"
+    ],
+    "description": "Uma composição intensa de especiarias, frutas e tabaco, com nuances de café e um fundo quente de âmbar e baunilha.",
+    "olfactory_family": "Âmbar",
+    "olfactory_notes": "Pimenta-preta, abacaxi, tabaco, café, íris, patchouli, âmbar, baunilha, madeiras secas, benjoim e labdano.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-asad"
+  },
+  {
+    "key": "foto-39",
+    "source_name": "Najma Mawwal",
+    "target_name": "Najma Mawwal",
+    "review": "",
+    "files": [
+      "/importacao/foto-39.jpg"
+    ],
+    "description": "Flores delicadas e envolventes se combinam com uma base doce de baunilha, âmbar e almíscar.",
+    "olfactory_family": "Floral oriental",
+    "olfactory_notes": "Rosa, jasmim, tuberosa, baunilha, âmbar, madeiras nobres e almíscar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-najma-mawwal"
+  },
+  {
+    "key": "foto-40",
+    "source_name": "Attar Al Wesal",
+    "target_name": "Attar Al Wesal",
+    "review": "",
+    "files": [
+      "/importacao/foto-40.jpg"
+    ],
+    "description": "Frescor aromático e especiarias em uma fragrância com fundo doce, quente e amadeirado.",
+    "olfactory_family": "Oriental especiado",
+    "olfactory_notes": "Lavanda, pera, hortelã, bergamota, limão, canela, sálvia esclareia, cominho, baunilha negra, âmbar, cedro e patchouli.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-attar-al-wesal"
+  },
+  {
+    "key": "foto-42",
+    "source_name": "Ghost Spectre",
+    "target_name": "Ghost Spectre",
+    "review": "",
+    "files": [
+      "/importacao/foto-42.jpg"
+    ],
+    "description": "Uma composição de especiarias e madeiras, com âmbar e almíscar para uma presença envolvente.",
+    "olfactory_family": "Amadeirado oriental",
+    "olfactory_notes": "Especiarias, âmbar, notas amadeiradas e musk.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-ghost-spectre"
+  },
+  {
+    "key": "foto-43",
+    "source_name": "Mishlaat",
+    "target_name": "Mishlah",
+    "review": "",
+    "files": [
+      "/importacao/foto-43.jpg"
+    ],
+    "description": "Uma fragrância apresentada na imagem com inspiração oriental e perfil marcante.",
+    "olfactory_family": "",
+    "olfactory_notes": "",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-mishlah"
+  },
+  {
+    "key": "foto-45",
+    "source_name": "Alfares",
+    "target_name": "Alfares",
+    "review": "",
+    "files": [
+      "/importacao/foto-45.jpg"
+    ],
+    "description": "Oud e especiarias encontram madeiras e âmbar, em uma composição oriental marcante.",
+    "olfactory_family": "Amadeirado oriental",
+    "olfactory_notes": "Oud, âmbar, especiarias, madeiras e notas orientais.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-alfares"
+  },
+  {
+    "key": "foto-47",
+    "source_name": "Turathi Electric Afnan",
+    "target_name": "Electric Afnan",
+    "review": "",
+    "files": [
+      "/importacao/foto-47.jpg"
+    ],
+    "description": "Frutas e cítricos se combinam com flores e madeiras, finalizando em uma base suave de baunilha, âmbar e almíscar.",
+    "olfactory_family": "Frutado amadeirado",
+    "olfactory_notes": "Bergamota, toranja rosa, pera, mandarina, maçã, cedro, flor de laranjeira, baunilha, âmbar, almíscar e ambroxan.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-electric-afnan"
+  },
+  {
+    "key": "foto-48",
+    "source_name": "Angel Body Cream",
+    "target_name": "",
+    "review": "Angel Body Cream não consta na lista de produtos.",
+    "files": [
+      "/importacao/foto-48.jpg"
+    ],
+    "description": "Creme corporal Angel de 250 g, com perfil perfumado doce e ambarado.",
+    "olfactory_family": "Âmbar baunilha",
+    "olfactory_notes": "Bergamota da Calábria, praliné e patchouli.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": ""
+  },
+  {
+    "key": "foto-50",
+    "source_name": "Emeer",
+    "target_name": "Emmer",
+    "review": "",
+    "files": [
+      "/importacao/foto-50.jpg"
+    ],
+    "description": "Cítricos e ervas aromáticas encontram chá branco, especiarias e um fundo de madeiras e âmbar cinzento.",
+    "olfactory_family": "Amadeirado aromático",
+    "olfactory_notes": "",
+    "top_notes": "Limão, bergamota, bagas de zimbro e sálvia esclareia.",
+    "heart_notes": "Cardamomo, chá branco, sândalo e olíbano.",
+    "base_notes": "Âmbar cinzento, cashmeran, patchouli e cedro.",
+    "target_slug": "unissex-emmer"
+  },
+  {
+    "key": "foto-52",
+    "source_name": "Love Collection 1038",
+    "target_name": "",
+    "review": "Love Collection 1038 não consta na lista.",
+    "files": [
+      "/importacao/foto-52.jpg"
+    ],
+    "description": "Uma fragrância de perfil alegre, com cítricos e flores brancas sobre uma base doce de baunilha.",
+    "olfactory_family": "Floral frutado",
+    "olfactory_notes": "Frutas cítricas, flores brancas, baunilha e notas doces.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": ""
+  },
+  {
+    "key": "foto-53",
+    "source_name": "Maître de Blue",
+    "target_name": "Maître de Blue",
+    "review": "",
+    "files": [
+      "/importacao/foto-53.jpg"
+    ],
+    "description": "Uma combinação fresca de cítricos, notas marinhas e aromas amadeirados, com perfil moderno e versátil.",
+    "olfactory_family": "Aromático amadeirado",
+    "olfactory_notes": "Notas cítricas, notas amadeiradas, notas marinhas e notas aromáticas.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-maitre-de-blue"
+  },
+  {
+    "key": "foto-55",
+    "source_name": "Club de Nuit Elite",
+    "target_name": "Club de Nuit Elite",
+    "review": "",
+    "files": [
+      "/importacao/foto-55.jpg"
+    ],
+    "description": "Uma abertura verde e cítrica encontra flores e especiarias, com um fundo amadeirado de vetiver, cedro e almíscar.",
+    "olfactory_family": "Cítrico aromático",
+    "olfactory_notes": "",
+    "top_notes": "Chá verde, bergamota, maçã, pimenta de Sichuan e pimenta-rosa.",
+    "heart_notes": "Rosa centifolia, gerânio, groselha-preta, notas aromáticas e notas terrosas.",
+    "base_notes": "Vetiver, âmbar, cedro, almíscar e cashmeran.",
+    "target_slug": "masculino-club-de-nuit-elite"
+  },
+  {
+    "key": "foto-57",
+    "source_name": "Bidaya Maktub Gold",
+    "target_name": "Bidaya Maktub Gold",
+    "review": "",
+    "files": [
+      "/importacao/foto-57.jpg"
+    ],
+    "description": "Madeiras e especiarias se combinam com a doçura da baunilha e o calor do âmbar.",
+    "olfactory_family": "Amadeirado oriental",
+    "olfactory_notes": "Baunilha, especiarias, madeiras e âmbar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-bidaya-maktub-gold"
+  },
+  {
+    "key": "foto-58",
+    "source_name": "Philos Pura",
+    "target_name": "Philos Pura",
+    "review": "",
+    "files": [
+      "/importacao/foto-58.jpg"
+    ],
+    "description": "Cítricos luminosos encontram frutas suculentas, sobre um fundo macio de baunilha, âmbar e almíscar.",
+    "olfactory_family": "Aromático frutado",
+    "olfactory_notes": "Laranja, bergamota, limão, frutas, baunilha de Madagascar, almíscar branco e âmbar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-philos-pura"
+  },
+  {
+    "key": "foto-59",
+    "source_name": "Hayaati",
+    "target_name": "Hayaati",
+    "review": "",
+    "files": [
+      "/importacao/foto-59.jpg"
+    ],
+    "description": "Maçã e bergamota abrem uma fragrância com canela e madeiras, finalizando em almíscar e baunilha.",
+    "olfactory_family": "Fresco amadeirado",
+    "olfactory_notes": "",
+    "top_notes": "Maçã e bergamota.",
+    "heart_notes": "Canela e notas amadeiradas.",
+    "base_notes": "Almíscar e baunilha.",
+    "target_slug": "unissex-hayaati"
+  },
+  {
+    "key": "foto-60",
+    "source_name": "So Glam",
+    "target_name": "So Glam",
+    "review": "",
+    "files": [
+      "/importacao/foto-60.jpg"
+    ],
+    "description": "Especiarias, flores e baunilha se encontram em uma fragrância doce, cremosa e envolvente.",
+    "olfactory_family": "Floral especiado gourmand",
+    "olfactory_notes": "Cardamomo, ylang-ylang e baunilha.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-so-glam"
+  },
+  {
+    "key": "foto-61",
+    "source_name": "Glacier Bella",
+    "target_name": "Glacier Bella",
+    "review": "",
+    "files": [
+      "/importacao/foto-61.jpg"
+    ],
+    "description": "Uma combinação doce e frutada de pera verde e bergamota, com o conforto cremoso da baunilha.",
+    "olfactory_family": "Oriental baunilhado frutado",
+    "olfactory_notes": "Pera verde, bergamota e fava de baunilha.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-glacier-bella"
+  },
+  {
+    "key": "foto-62",
+    "source_name": "Ravine Ginger",
+    "target_name": "Ravine Ginger",
+    "review": "",
+    "files": [
+      "/importacao/foto-62.jpg"
+    ],
+    "description": "Gengibre e especiarias trazem frescor vibrante a uma composição com madeiras e âmbar.",
+    "olfactory_family": "Amadeirado especiado",
+    "olfactory_notes": "Gengibre, especiarias, madeiras e âmbar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-ravine-ginger"
+  },
+  {
+    "key": "foto-63",
+    "source_name": "Recent Royal Collection Maison Asrar",
+    "target_name": "Regent Royal Maison Asrar",
+    "review": "A foto diz Recent Royal Collection; a lista diz Regent Royal Maison Asrar. Confirme a correspondência.",
+    "files": [
+      "/importacao/foto-63.jpg"
+    ],
+    "description": "Uma fragrância apresentada na imagem com perfil verde, nobre e sofisticado.",
+    "olfactory_family": "",
+    "olfactory_notes": "",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-regent-royal-maison-asrar"
+  },
+  {
+    "key": "foto-64",
+    "source_name": "Bidaya Habibi King",
+    "target_name": "",
+    "review": "Bidaya Habibi King não consta na lista.",
+    "files": [
+      "/importacao/foto-64.jpg"
+    ],
+    "description": "Especiarias e cítricos encontram baunilha bourbon e um fundo doce de praliné, tonka e madeiras.",
+    "olfactory_family": "Âmbar gourmand",
+    "olfactory_notes": "",
+    "top_notes": "Bergamota, cardamomo, canela e flor de laranjeira.",
+    "heart_notes": "Baunilha bourbon e elemi.",
+    "base_notes": "Âmbar, amêndoa cristalizada, madeira de guaiaco, almíscar, praliné e fava tonka.",
+    "target_slug": ""
+  },
+  {
+    "key": "foto-66",
+    "source_name": "Liam",
+    "target_name": "Liam",
+    "review": "",
+    "files": [
+      "/importacao/foto-66.jpg"
+    ],
+    "description": "Cítricos, lavanda e maçã encontram especiarias e um fundo amadeirado de cedro, patchouli e âmbar.",
+    "olfactory_family": "Amadeirado aromático",
+    "olfactory_notes": "Bergamota, lavanda, maçã, cardamomo, sálvia, âmbar, cedro e patchouli.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-liam"
+  },
+  {
+    "key": "foto-67",
+    "source_name": "Love Collection 1011",
+    "target_name": "",
+    "review": "Love Collection 1011 não consta na lista.",
+    "files": [
+      "/importacao/foto-67.jpg"
+    ],
+    "description": "Uma fragrância fresca e picante, com especiarias, lavanda e madeiras almiscaradas.",
+    "olfactory_family": "Aquático aromático",
+    "olfactory_notes": "Especiarias, lavanda e madeiras almiscaradas.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": ""
+  },
+  {
+    "key": "foto-68",
+    "source_name": "Haya",
+    "target_name": "Haya",
+    "review": "",
+    "files": [
+      "/importacao/foto-68.jpg"
+    ],
+    "description": "Flores delicadas se combinam com baunilha, âmbar e almíscar, em uma composição doce e envolvente.",
+    "olfactory_family": "Floral oriental",
+    "olfactory_notes": "Flor de laranjeira, jasmim, baunilha, âmbar e almíscar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-haya"
+  },
+  {
+    "key": "foto-69",
+    "source_name": "Watani",
+    "target_name": "Watani",
+    "review": "",
+    "files": [
+      "/importacao/foto-69.jpg"
+    ],
+    "description": "Uma composição frutada e envolvente, com flores e uma base suave de almíscar e âmbar.",
+    "olfactory_family": "Frutado floral almiscarado",
+    "olfactory_notes": "Frutas tropicais, notas florais, almíscar e âmbar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-watani"
+  },
+  {
+    "key": "foto-70",
+    "source_name": "Al Haramain Amber Oud Gold Edition",
+    "target_name": "Al Haramain Amber Oud",
+    "review": "A foto mostra Gold Edition. Confirme se é a versão do Al Haramain Amber Oud cadastrado.",
+    "files": [
+      "/importacao/foto-70.jpg"
+    ],
+    "description": "Uma composição oriental de oud e especiarias, com notas doces de baunilha e o calor do âmbar.",
+    "olfactory_family": "Amadeirado oriental",
+    "olfactory_notes": "Oud, âmbar, baunilha, notas doces e especiarias.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-al-haramain-amber-oud"
+  },
+  {
+    "key": "foto-71",
+    "source_name": "Musamam",
+    "target_name": "Mussamam Marrom",
+    "review": "A imagem diz Musamam, sem indicar cor. Confirme se corresponde ao Mussamam Marrom.",
+    "files": [
+      "/importacao/foto-71.jpg"
+    ],
+    "description": "Cítricos e lavanda encontram madeiras e gerânio, com um fundo especiado e defumado.",
+    "olfactory_family": "Amadeirado aromático",
+    "olfactory_notes": "",
+    "top_notes": "Açafrão, mandarina italiana e lavanda.",
+    "heart_notes": "Madeira de âmbar, cedro da Virgínia e gerânio.",
+    "base_notes": "Akigalawood, incenso e ládano.",
+    "target_slug": "unissex-mussamam-marrom"
+  },
+  {
+    "key": "foto-72",
+    "source_name": "SALVO Body Cream",
+    "target_name": "SALVO Body Cream",
+    "review": "",
+    "files": [
+      "/importacao/foto-72.jpg"
+    ],
+    "description": "Creme corporal Salvo de 100 ml, com textura cremosa e fragrância suave para o cuidado diário da pele.",
+    "olfactory_family": "",
+    "olfactory_notes": "",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "cuidados-salvo-body-cream"
+  },
+  {
+    "key": "foto-73",
+    "source_name": "Fakhar Lattafa White",
+    "target_name": "Fakhar Lattafa White",
+    "review": "",
+    "files": [
+      "/importacao/foto-73.jpg"
+    ],
+    "description": "Flores brancas, frutas e nuances cremosas se combinam com um fundo suave de baunilha, almíscar e sândalo.",
+    "olfactory_family": "Floral frutado",
+    "olfactory_notes": "Frutas, lírio, romã, aldeídos, tuberosa, jasmim, gardênia, ylang-ylang, rosa, peônia, baunilha, almíscar branco, sândalo e ambroxan.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "feminino-fakhar-lattafa-white"
+  },
+  {
+    "key": "foto-75",
+    "source_name": "Fakhar Lattafa Black",
+    "target_name": "Fakhar Lattafa Black",
+    "review": "",
+    "files": [
+      "/importacao/foto-75.jpg"
+    ],
+    "description": "Frescor de maçã, cítricos e gengibre com notas aromáticas e uma base de madeiras e vetiver.",
+    "olfactory_family": "Aromático amadeirado",
+    "olfactory_notes": "Maçã, bergamota, gengibre, lavanda, sálvia, cedro e vetiver.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "masculino-fakhar-lattafa-black"
+  },
+  {
+    "key": "foto-76",
+    "source_name": "Musamam White Intense",
+    "target_name": "Mussamam White",
+    "review": "",
+    "files": [
+      "/importacao/foto-76.jpg"
+    ],
+    "description": "Cítricos e especiarias encontram coco e ylang-ylang, com uma base cremosa de sândalo, almíscar e benjoim.",
+    "olfactory_family": "Oriental floral",
+    "olfactory_notes": "Bergamota, laranja, especiarias, coco, ylang-ylang, ambroxan, sândalo, almíscar e benjoim.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": "unissex-mussamam-white"
+  },
+  {
+    "key": "foto-78",
+    "source_name": "Hawas Tropical",
+    "target_name": "",
+    "review": "Hawas Tropical é uma versão diferente. Não associar automaticamente a Hawas.",
+    "files": [
+      "/importacao/foto-78.jpg"
+    ],
+    "description": "Uma fragrância tropical de frescor verde, com coco, figo e um fundo cremoso de sândalo e tonka.",
+    "olfactory_family": "Aromático verde",
+    "olfactory_notes": "Água de coco, folha de figo, gengibre, coco, figo, hortelã, sândalo, fava tonka e almíscar.",
+    "top_notes": "",
+    "heart_notes": "",
+    "base_notes": "",
+    "target_slug": ""
+  },
+  {
+    "key": "foto-79",
+    "source_name": "Sultan",
+    "target_name": "Sultan",
+    "review": "",
+    "files": [
+      "/importacao/foto-79.jpg"
+    ],
+    "description": "Cítricos e pimenta-rosa encontram especiarias aromáticas, sobre uma base de ambroxan, cedro e baunilha.",
+    "olfactory_family": "Fresco especiado amadeirado",
+    "olfactory_notes": "",
+    "top_notes": "Bergamota da Calábria e pimenta-rosa.",
+    "heart_notes": "Pimenta de Sichuan, lavanda, anis-estrelado e noz-moscada.",
+    "base_notes": "Ambroxan, cedro, ládano e baunilha.",
+    "target_slug": "unissex-sultan"
+  },
+  {
+    "key": "foto-80",
+    "source_name": "Musamam Black Intense",
+    "target_name": "Mussamam Black",
+    "review": "",
+    "files": [
+      "/importacao/foto-80.jpg"
+    ],
+    "description": "Frescor aromático e especiarias se combinam com um coração amadeirado e um fundo cremoso e envolvente.",
+    "olfactory_family": "Amadeirado aromático",
+    "olfactory_notes": "",
+    "top_notes": "Lavanda, noz-moscada, bergamota e sálvia.",
+    "heart_notes": "Gerânio, rosyfolia, mahonial e cedro.",
+    "base_notes": "Madeira de bordo, patchouli, fava tonka, cocoapulse e ambrofix.",
+    "target_slug": "unissex-mussamam-black"
+  }
+]
