@@ -72,16 +72,19 @@ code { background: var(--soft); padding: 1px 5px; border-radius: 5px; font-size:
 @media (min-width: 640px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
 @media (min-width: 960px) { .grid { grid-template-columns: repeat(4, 1fr); } }
 
-.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.card { min-width: 0; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .card:active { transform: scale(.985); }
-.card-img { position: relative; aspect-ratio: 3 / 4; background: var(--soft); display: grid; place-items: center; }
-.card-img img { width: 100%; height: 100%; object-fit: contain; }
+/* A altura vem do padding; a foto não participa do cálculo de tamanho do grid.
+   Evita o transbordamento de imagens com height:100% em grades no Safari iOS. */
+.card-img { position: relative; width: 100%; height: 0; padding-top: 133.333333%; flex: 0 0 auto; background: var(--soft); overflow: hidden; }
+.card-img > .placeholder { position: absolute; inset: 0; justify-content: center; }
+.card-img img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; object-position: center; }
 .card.unavailable .card-img img { opacity: .55; }
 .badge {
   position: absolute; top: 8px; left: 8px; padding: 3px 9px; border-radius: 999px;
   background: rgba(42, 38, 35, .85); color: #fff; font-size: .75rem; font-weight: 500;
 }
-.card-body { padding: 10px 12px 12px; }
+.card-body { position: relative; min-width: 0; overflow-wrap: anywhere; padding: 10px 12px 12px; }
 .card-name { margin: 0; font-size: .95rem; font-weight: 500; line-height: 1.25; }
 .card-price { margin: 4px 0 0; color: var(--gold-dark); font-weight: 600; }
 
@@ -123,23 +126,25 @@ code { background: var(--soft); padding: 1px 5px; border-radius: 5px; font-size:
 .check input { width: 20px; height: 20px; accent-color: var(--gold); }
 
 /* ---------- Página do produto ---------- */
-.product { display: grid; gap: 20px; }
+.product { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.gallery, .info { min-width: 0; }
 @media (min-width: 800px) { .product { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 40px; padding-top: 28px; } }
 .gallery-main {
-  position: relative; display: grid; place-items: center; width: 100%;
-  aspect-ratio: 3 / 4; max-height: 78vh; padding: 0; border: 1px solid var(--line);
+  position: relative; display: block; width: 100%; height: 0;
+  padding: 133.333333% 0 0; margin: 0; appearance: none; -webkit-appearance: none; border: 1px solid var(--line);
   border-radius: var(--radius); background: var(--soft); overflow: hidden;
 }
 .gallery-main.static { cursor: default; }
-.gallery-main img { width: 100%; height: 100%; object-fit: contain; }
+.gallery-main img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.gallery-main > .placeholder { position: absolute; inset: 0; justify-content: center; }
 .zoom-hint {
   position: absolute; bottom: 10px; right: 10px; padding: 4px 10px; border-radius: 999px;
   background: rgba(42, 38, 35, .75); color: #fff; font-size: .75rem;
 }
 .thumbs { display: flex; gap: 8px; overflow-x: auto; padding: 10px 0 2px; }
-.thumb { flex: 0 0 64px; height: 84px; padding: 0; border: 2px solid var(--line); border-radius: 10px; background: var(--soft); overflow: hidden; }
+.thumb { position: relative; appearance: none; -webkit-appearance: none; flex: 0 0 64px; height: 84px; padding: 0; border: 2px solid var(--line); border-radius: 10px; background: var(--soft); overflow: hidden; }
 .thumb.active { border-color: var(--gold); }
-.thumb img { width: 100%; height: 100%; object-fit: contain; }
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; color: var(--gold-dark); font-weight: 600; }
 .product-name { margin: 4px 0 6px; font-size: 2.1rem; line-height: 1.1; font-weight: 600; }
 .product-price { margin: 0 0 10px; font-size: 1.6rem; font-weight: 600; color: var(--gold-dark); }
@@ -148,14 +153,15 @@ code { background: var(--soft); padding: 1px 5px; border-radius: 5px; font-size:
 .status.off { background: #f3e9e7; color: var(--err); }
 
 /* ---------- Lightbox ---------- */
-.lightbox { position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; background: rgba(20, 18, 16, .96); }
+.lightbox { position: fixed; inset: 0; height: 100%; height: 100dvh; z-index: 100; display: flex; flex-direction: column; background: rgba(20, 18, 16, .96); }
 .lb-bar { display: flex; align-items: center; justify-content: space-between; padding: calc(10px + env(safe-area-inset-top)) 14px 10px; }
 .muted-light { color: #cfc6b8; font-size: .9rem; }
 .lb-actions { display: flex; gap: 8px; }
 .lb-btn { min-width: 44px; height: 44px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: #fff; font-size: 1.1rem; }
-.lb-scroll { flex: 1; min-height: 0; display: flex; overflow: auto; touch-action: pan-x pan-y pinch-zoom; }
-.lb-scroll img { margin: auto; max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in; }
-.lb-scroll img.zoomed { width: 220%; max-width: none; max-height: none; height: auto; cursor: zoom-out; }
+.lb-scroll { position: relative; flex: 1; min-width: 0; min-height: 0; overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y pinch-zoom; }
+.lb-scroll img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: contain; object-position: center; cursor: zoom-in; }
+.lb-scroll img.zoomed { position: relative; inset: auto; width: 220%; height: auto; cursor: zoom-out; }
+.lb-bar, .lb-nav { flex-shrink: 0; }
 .lb-nav { display: flex; justify-content: space-between; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
 
 /* ---------- Toasts ---------- */
