@@ -5,6 +5,7 @@ import { Brand, Spinner } from '../components/Common.jsx';
 import ProductList from './ProductList.jsx';
 import ProductEditor from './ProductEditor.jsx';
 import Settings from './Settings.jsx';
+import PhotoImport from './PhotoImport.jsx';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -114,6 +115,7 @@ function Layout() {
           <NavLink end to="/admin" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>
             Produtos
           </NavLink>
+          <NavLink to="/admin/importar" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>Importar fotos</NavLink>
           <NavLink to="/admin/configuracoes" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>
             Configurações
           </NavLink>
@@ -134,6 +136,7 @@ export default function Admin() {
           <Route index element={<ProductList />} />
           <Route path="produto/novo" element={<ProductEditor />} />
           <Route path="produto/:id" element={<ProductEditor />} />
+          <Route path="importar" element={<PhotoImport />} />
           <Route path="configuracoes" element={<Settings />} />
         </Route>
       </Routes>

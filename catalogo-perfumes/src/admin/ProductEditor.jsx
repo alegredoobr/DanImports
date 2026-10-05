@@ -12,7 +12,7 @@ import {
 import { Spinner } from '../components/Common.jsx';
 import { useToast } from '../components/Toast.jsx';
 
-const EMPTY = { name: '', price: '', category: 'masculino', available: true, visible: true };
+const EMPTY = { name: '', price: '', category: 'masculino', available: true, visible: true, description: '', olfactory_family: '', olfactory_notes: '', top_notes: '', heart_notes: '', base_notes: '' };
 const ACCEPT = Object.keys(ALLOWED_TYPES).join(',');
 
 export default function ProductEditor() {
@@ -41,7 +41,7 @@ export default function ProductEditor() {
     setLoadError('');
     const { data, error: err } = await supabase
       .from('products')
-      .select('id, name, price_cents, category, available, visible, product_images(id, path, position)')
+      .select('id, name, price_cents, category, available, visible, description, olfactory_family, olfactory_notes, top_notes, heart_notes, base_notes, product_images(id, path, position)')
       .eq('id', id)
       .maybeSingle();
     setLoading(false);
@@ -49,6 +49,13 @@ export default function ProductEditor() {
     if (!data) return setLoadError('Produto não encontrado.');
     setForm({
       name: data.name,
+      description: data.description || '',
+      olfactory_family: data.olfactory_family || '',
+      olfactory_notes: data.olfactory_notes || '',
+      top_notes: data.top_notes || '',
+      heart_notes: data.heart_notes || '',
+      base_notes: data.base_notes || '',
+
       price: centsToInput(data.price_cents),
       category: data.category,
       available: data.available,
@@ -166,6 +173,12 @@ export default function ProductEditor() {
     try {
       const payload = {
         name,
+        description: form.description.trim(),
+        olfactory_family: form.olfactory_family.trim(),
+        olfactory_notes: form.olfactory_notes.trim(),
+        top_notes: form.top_notes.trim(),
+        heart_notes: form.heart_notes.trim(),
+        base_notes: form.base_notes.trim(),
         price_cents: cents,
         category: form.category,
         available: form.available,
@@ -272,6 +285,35 @@ export default function ProductEditor() {
           <input type="checkbox" checked={form.visible} onChange={set('visible')} />
           <span>Visível na vitrine (desmarque para ocultar sem excluir)</span>
         </label>
+      </section>
+
+      <section className="panel">
+        <h2>Descrição e notas olfativas</h2>
+        <div className="field">
+          <label htmlFor="description">Descrição</label>
+          <textarea id="description" rows={3} maxLength={3000} value={form.description} onChange={set('description')} />
+        </div>
+        <div className="field">
+          <label htmlFor="olfactory_family">Família olfativa</label>
+          <textarea id="olfactory_family" rows={2} maxLength={3000} value={form.olfactory_family} onChange={set('olfactory_family')} />
+        </div>
+        <div className="field">
+          <label htmlFor="olfactory_notes">Notas olfativas gerais</label>
+          <textarea id="olfactory_notes" rows={2} maxLength={3000} value={form.olfactory_notes} onChange={set('olfactory_notes')} />
+        </div>
+        <div className="field">
+          <label htmlFor="top_notes">Notas de saída</label>
+          <textarea id="top_notes" rows={2} maxLength={3000} value={form.top_notes} onChange={set('top_notes')} />
+        </div>
+        <div className="field">
+          <label htmlFor="heart_notes">Notas de coração</label>
+          <textarea id="heart_notes" rows={2} maxLength={3000} value={form.heart_notes} onChange={set('heart_notes')} />
+        </div>
+        <div className="field">
+          <label htmlFor="base_notes">Notas de fundo</label>
+          <textarea id="base_notes" rows={2} maxLength={3000} value={form.base_notes} onChange={set('base_notes')} />
+        </div>
+        <p className="hint">Preencha apenas as informações conhecidas. Os campos vazios não aparecem na vitrine.</p>
       </section>
 
       <section className="panel">

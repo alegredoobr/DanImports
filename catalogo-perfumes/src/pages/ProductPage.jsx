@@ -77,7 +77,7 @@ export default function ProductPage() {
     setActive(0);
     supabase
       .from('products')
-      .select('id, name, price_cents, category, available, product_images(path, position)')
+      .select('id, name, price_cents, category, available, description, olfactory_family, olfactory_notes, top_notes, heart_notes, base_notes, product_images(path, position)')
       .eq('id', id)
       .eq('visible', true)
       .maybeSingle()
@@ -175,6 +175,11 @@ export default function ProductPage() {
           <p className={`status ${product.available ? 'ok' : 'off'}`}>
             {product.available ? 'Disponível' : 'Indisponível'}
           </p>
+
+          {product.description?.trim() && <section className="product-detail"><h2>Descrição</h2><p>{product.description}</p></section>}
+          {[['olfactory_family', 'Família olfativa'], ['olfactory_notes', 'Notas olfativas'], ['top_notes', 'Notas de saída'], ['heart_notes', 'Notas de coração'], ['base_notes', 'Notas de fundo']].some(([key]) => product[key]?.trim()) && (
+            <section className="product-detail"><h2>Notas olfativas</h2><dl>{[['olfactory_family', 'Família olfativa'], ['olfactory_notes', 'Notas principais'], ['top_notes', 'Saída'], ['heart_notes', 'Coração'], ['base_notes', 'Fundo']].map(([key, label]) => product[key]?.trim() && <div key={key}><dt>{label}</dt><dd>{product[key]}</dd></div>)}</dl></section>
+          )}
 
           {!product.available && <p className="muted">Este produto está indisponível no momento.</p>}
           {product.available && link && (

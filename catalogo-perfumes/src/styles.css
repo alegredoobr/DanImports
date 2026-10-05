@@ -210,3 +210,22 @@ code { background: var(--soft); padding: 1px 5px; border-radius: 5px; font-size:
 .sticky-save .btn { flex: 1; }
 .logo-prev { width: 120px; height: 80px; background: var(--soft); border-radius: 10px; display: grid; place-items: center; overflow: hidden; margin-bottom: 8px; }
 .logo-prev img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+/* Descrições e importação */
+.field textarea { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); resize: vertical; }
+.product-detail { margin: 20px 0; padding-top: 16px; border-top: 1px solid var(--line); }
+.product-detail h2 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 10px; }
+.product-detail p, .product-detail dd { white-space: pre-wrap; overflow-wrap: anywhere; }
+.product-detail dl { margin: 0; }
+.product-detail dl div { margin-bottom: 10px; }
+.product-detail dt { font-size: .85rem; color: var(--gold-dark); font-weight: 600; }
+.product-detail dd { margin: 2px 0 0; }
+.import-card { display: grid; grid-template-columns: 110px minmax(0,1fr); gap: 16px; }
+.import-photos { display: flex; flex-direction: column; gap: 8px; }
+.import-photos img { width: 110px; border-radius: 8px; }
+.import-card select { width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 10px; }
+.import-warning { color: var(--err); }
+.import-result { white-space: pre-wrap; overflow-wrap: anywhere; }
+.admin-tabs { overflow-x: auto; }
+.admin-tab { white-space: nowrap; }
+@media (max-width: 480px) { .import-card { grid-template-columns: 74px minmax(0,1fr); gap: 10px; } .import-photos img { width: 74px; } }
