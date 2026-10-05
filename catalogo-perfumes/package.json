@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "seed:generate": "node scripts/generate-seed.mjs"
+    "seed:generate": "node scripts/generate-seed.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",

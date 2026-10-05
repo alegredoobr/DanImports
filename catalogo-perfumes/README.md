@@ -1,5 +1,7 @@
 # Catálogo de Perfumes
 
+**Para atualizar o app que já está no ar, siga `LEIA_PRIMEIRO.md`.**
+
 Vitrine mobile-first (React + Vite) com painel `/admin`, usando Supabase (banco, login e fotos) e pronta para a Vercel. Pedidos por WhatsApp; sem carrinho nem pagamento nesta etapa.
 
 Depois de publicado, **preços, fotos, disponibilidade e dados da loja são alterados pelo `/admin`**, sem mexer no código e sem novo deploy.
@@ -16,7 +18,8 @@ Depois de publicado, **preços, fotos, disponibilidade e dados da loja são alte
 3. Em outra consulta, cole **`supabase/02_seed_products.sql`** e clique em **Run**. Importa os 59 produtos do PDF (nomes, valores e categorias exatos).
    - Pode rodar de novo sem duplicar nada: usa `ON CONFLICT DO NOTHING`, então **suas edições nunca são sobrescritas**. O app nunca importa nada sozinho (nem ao reiniciar ou fazer deploy).
    - Atenção: se você *excluir* um produto no painel e rodar este arquivo de novo, ele volta. Para esconder sem perder o cadastro, use “Visível”.
-4. Em **Authentication → Sign In / Providers → Email**, deixe e-mail/senha ligado e **desative “Allow new users to sign up”** (cadastro público desligado). Mesmo que alguém criasse uma conta, sem estar na tabela `admins` nada seria gravado.
+4. Execute também **`supabase/03_descriptions.sql`**, que adiciona as descrições, notas e a associação segura das fotos importadas.
+5. Em **Authentication → Sign In / Providers → Email**, deixe e-mail/senha ligado e **desative “Allow new users to sign up”** (cadastro público desligado). Mesmo que alguém criasse uma conta, sem estar na tabela `admins` nada seria gravado.
 
 ## 2. Criar o administrador
 
@@ -61,6 +64,10 @@ Abra o endereço mostrado (ex.: <http://localhost:5173>). Painel em `/admin`.
 ## 6. Configurar a loja e adicionar as fotos
 
 **Loja:** `/admin` → **Configurações**: nome, logo e WhatsApp (DDD + número; o +55 é assumido). Enquanto o WhatsApp estiver vazio, o botão de pedido não aparece.
+
+**Importação das fotos enviadas:** `/admin` → **Importar fotos**. Confira as associações, revise os casos desmarcados e importe. Veja `FOTOS_E_ASSOCIACOES.md`.
+
+**Descrição e notas:** `/admin` → produto → **Descrição e notas olfativas**. Campos vazios não aparecem na vitrine.
 
 **Fotos de um produto:**
 1. `/admin` → toque no nome do produto.
