@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { publicUrl, supabase } from '../lib/supabase.js';
 import { categoryLabel, formatBRL, whatsappLink } from '../lib/format.js';
+import { clearCouponCode, discountedCents, loadCouponCode, normalizeCouponCode, validateCoupon } from '../lib/coupons.js';
 import { useSettings } from '../lib/settings.jsx';
 import { Brand, Placeholder, Spinner } from '../components/Common.jsx';
 
@@ -34,30 +35,17 @@ function Lightbox({ urls, start, name, onClose }) {
       <div className="lb-bar">
         <span className="muted-light">{urls.length > 1 ? `${i + 1} / ${urls.length}` : ''}</span>
         <div className="lb-actions">
-          <button className="lb-btn" onClick={() => setZoom((z) => !z)}>
-            {zoom ? 'Reduzir' : 'Ampliar'}
-          </button>
-          <button className="lb-btn" onClick={onClose} aria-label="Fechar">
-            ✕
-          </button>
+          <button className="lb-btn" onClick={() => setZoom((z) => !z)}>{zoom ? 'Reduzir' : 'Ampliar'}</button>
+          <button className="lb-btn" onClick={onClose} aria-label="Fechar">✕</button>
         </div>
       </div>
       <div className="lb-scroll">
-        <img
-          src={urls[i]}
-          alt={name}
-          className={zoom ? 'zoomed' : ''}
-          onClick={() => setZoom((z) => !z)}
-        />
+        <img src={urls[i]} alt={name} className={zoom ? 'zoomed' : ''} onClick={() => setZoom((z) => !z)} />
       </div>
       {urls.length > 1 && (
         <div className="lb-nav">
-          <button className="lb-btn" onClick={() => go(-1)} aria-label="Imagem anterior">
-            ‹
-          </button>
-          <button className="lb-btn" onClick={() => go(1)} aria-label="Próxima imagem">
-            ›
-          </button>
+          <button className="lb-btn" onClick={() => go(-1)} aria-label="Imagem anterior">‹</button>
+          <button className="lb-btn" onClick={() => go(1)} aria-label="Próxima imagem">›</button>
         </div>
       )}
     </div>
@@ -66,10 +54,16 @@ function Lightbox({ urls, start, name, onClose }) {
 
 export default function ProductPage() {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
   const { settings } = useSettings();
   const [state, setState] = useState({ status: 'loading' });
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
+  const [couponInput, setCouponInput] = useState('');
+  const [coupon, setCoupon] = useState(null);
+  const [couponMessage, setCouponMessage] = useState('');
+  const [couponBusy, setCouponBusy] = useState(false);
+  const [ordering, setOrdering] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -95,6 +89,48 @@ export default function ProductPage() {
     };
   }, [id]);
 
+  useEffect(() => {
+    const incoming = normalizeCouponCode(searchParams.get('cupom')) || loadCouponCode();
+    if (!incoming) return;
+    setCouponInput(incoming);
+    let alive = true;
+    validateCoupon(incoming).then((result) => {
+      if (!alive) return;
+      if (result.valid) {
+        setCoupon(result.coupon);
+        setCouponMessage(`Cupom ${result.coupon.code} aplicado: ${result.coupon.discount_percent.toLocaleString('pt-BR')}% de desconto.`);
+      } else if (!result.setupMissing) {
+        clearCouponCode();
+      }
+    });
+    return () => {
+      alive = false;
+    };
+  }, [searchParams]);
+
+  async function applyCoupon(e) {
+    e?.preventDefault();
+    setCouponBusy(true);
+    setCouponMessage('');
+    const result = await validateCoupon(couponInput);
+    setCouponBusy(false);
+    if (!result.valid) {
+      setCoupon(null);
+      setCouponMessage(result.message);
+      return;
+    }
+    setCoupon(result.coupon);
+    setCouponInput(result.coupon.code);
+    setCouponMessage(`Cupom ${result.coupon.code} aplicado: ${result.coupon.discount_percent.toLocaleString('pt-BR')}% de desconto.`);
+  }
+
+  function removeCoupon() {
+    setCoupon(null);
+    setCouponInput('');
+    setCouponMessage('');
+    clearCouponCode();
+  }
+
   const header = (
     <header className="topbar">
       <Link to="/" className="back" aria-label="Voltar ao catálogo" onClick={(e) => {
@@ -109,33 +145,62 @@ export default function ProductPage() {
     </header>
   );
 
-  if (state.status === 'loading')
-    return (
-      <>
-        {header}
-        <Spinner />
-      </>
-    );
+  if (state.status === 'loading') return <>{header}<Spinner /></>;
 
   if (state.status !== 'ok')
     return (
       <>
         {header}
         <div className="center-msg">
-          <p>
-            {state.status === 'error'
-              ? 'Não foi possível carregar o produto. Tente novamente.'
-              : 'Produto não encontrado.'}
-          </p>
-          <Link className="btn" to="/">
-            Ver catálogo
-          </Link>
+          <p>{state.status === 'error' ? 'Não foi possível carregar o produto. Tente novamente.' : 'Produto não encontrado.'}</p>
+          <Link className="btn" to="/">Ver catálogo</Link>
         </div>
       </>
     );
 
   const { product, urls } = state;
-  const link = product.available ? whatsappLink(settings.whatsapp, product) : null;
+  const finalPrice = coupon
+    ? discountedCents(product.price_cents, coupon.discount_percent)
+    : product.price_cents;
+  const normalLink = product.available && !coupon ? whatsappLink(settings.whatsapp, product) : null;
+
+  async function orderWithCoupon() {
+    if (!coupon || !settings.whatsapp || ordering) return;
+    setOrdering(true);
+
+    const { data, error } = await supabase.rpc('create_affiliate_order', {
+      p_product_id: product.id,
+      p_coupon_code: coupon.code,
+    });
+
+    setOrdering(false);
+    if (error) {
+      setCouponMessage('Não foi possível registrar o pedido com este cupom. Tente novamente.');
+      return;
+    }
+
+    const order = Array.isArray(data) ? data[0] : data;
+    if (!order) {
+      setCouponMessage('Não foi possível registrar o pedido com este cupom.');
+      return;
+    }
+
+    const shortId = String(order.order_id).split('-')[0].toUpperCase();
+    const message = [
+      'Olá! Quero fazer este pedido:',
+      '',
+      `1x ${product.name}`,
+      `Valor original: ${formatBRL(order.original_amount_cents)}`,
+      `Cupom: ${order.coupon_code}`,
+      `Desconto: -${formatBRL(order.discount_amount_cents)}`,
+      '',
+      `TOTAL: ${formatBRL(order.final_amount_cents)}`,
+      '',
+      `Código do pedido: #${shortId}`,
+    ].join('\n');
+
+    window.location.href = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`;
+  }
 
   return (
     <>
@@ -148,19 +213,12 @@ export default function ProductPage() {
               <span className="zoom-hint">Toque para ampliar</span>
             </button>
           ) : (
-            <div className="gallery-main static">
-              <Placeholder />
-            </div>
+            <div className="gallery-main static"><Placeholder /></div>
           )}
           {urls.length > 1 && (
             <div className="thumbs">
               {urls.map((u, idx) => (
-                <button
-                  key={u}
-                  className={`thumb ${idx === active ? 'active' : ''}`}
-                  onClick={() => setActive(idx)}
-                  aria-label={`Ver imagem ${idx + 1}`}
-                >
+                <button key={u} className={`thumb ${idx === active ? 'active' : ''}`} onClick={() => setActive(idx)} aria-label={`Ver imagem ${idx + 1}`}>
                   <img src={u} alt="" loading="lazy" />
                 </button>
               ))}
@@ -171,10 +229,40 @@ export default function ProductPage() {
         <div className="info">
           <p className="eyebrow">{categoryLabel(product.category)}</p>
           <h1 className="serif product-name">{product.name}</h1>
-          <p className="product-price">{formatBRL(product.price_cents)}</p>
-          <p className={`status ${product.available ? 'ok' : 'off'}`}>
-            {product.available ? 'Disponível' : 'Indisponível'}
-          </p>
+          {coupon ? (
+            <div className="coupon-price">
+              <span className="old-price">{formatBRL(product.price_cents)}</span>
+              <p className="product-price">{formatBRL(finalPrice)}</p>
+              <span className="discount-pill">{coupon.discount_percent.toLocaleString('pt-BR')}% OFF</span>
+            </div>
+          ) : (
+            <p className="product-price">{formatBRL(product.price_cents)}</p>
+          )}
+          <p className={`status ${product.available ? 'ok' : 'off'}`}>{product.available ? 'Disponível' : 'Indisponível'}</p>
+
+          {product.available && (
+            <section className="coupon-box">
+              <div className="coupon-box-head">
+                <div>
+                  <strong>Tem cupom de desconto?</strong>
+                  <p>Use o código do seu influenciador.</p>
+                </div>
+                {coupon && <button className="coupon-remove" onClick={removeCoupon}>Remover</button>}
+              </div>
+              <form className="coupon-form" onSubmit={applyCoupon}>
+                <input
+                  type="text"
+                  value={couponInput}
+                  onChange={(e) => setCouponInput(normalizeCouponCode(e.target.value))}
+                  placeholder="Ex.: ANA10"
+                  maxLength={30}
+                  aria-label="Cupom de desconto"
+                />
+                <button className="btn small" disabled={couponBusy}>{couponBusy ? 'Validando…' : 'Aplicar'}</button>
+              </form>
+              {couponMessage && <p className={`coupon-message ${coupon ? 'success' : ''}`}>{couponMessage}</p>}
+            </section>
+          )}
 
           {product.description?.trim() && <section className="product-detail"><h2>Descrição</h2><p>{product.description}</p></section>}
           {[['olfactory_family', 'Família olfativa'], ['olfactory_notes', 'Notas olfativas'], ['top_notes', 'Notas de saída'], ['heart_notes', 'Notas de coração'], ['base_notes', 'Notas de fundo']].some(([key]) => product[key]?.trim()) && (
@@ -182,14 +270,15 @@ export default function ProductPage() {
           )}
 
           {!product.available && <p className="muted">Este produto está indisponível no momento.</p>}
-          {product.available && link && (
-            <a className="btn wa" href={link} target="_blank" rel="noopener noreferrer">
-              Pedir pelo WhatsApp
-            </a>
+          {product.available && coupon && settings.whatsapp && (
+            <button className="btn wa" onClick={orderWithCoupon} disabled={ordering}>
+              {ordering ? 'Preparando pedido…' : `Pedir por ${formatBRL(finalPrice)} no WhatsApp`}
+            </button>
           )}
-          {product.available && !link && (
-            <p className="muted">Pedidos pelo WhatsApp em breve.</p>
+          {product.available && !coupon && normalLink && (
+            <a className="btn wa" href={normalLink} target="_blank" rel="noopener noreferrer">Pedir pelo WhatsApp</a>
           )}
+          {product.available && !settings.whatsapp && <p className="muted">Pedidos pelo WhatsApp em breve.</p>}
         </div>
       </main>
       {open && <Lightbox urls={urls} start={active} name={product.name} onClose={() => setOpen(false)} />}
