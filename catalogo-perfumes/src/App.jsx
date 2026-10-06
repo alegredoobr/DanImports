@@ -6,6 +6,7 @@ import { ToastProvider } from './components/Toast.jsx';
 import { Spinner } from './components/Common.jsx';
 import Catalog from './pages/Catalog.jsx';
 import ProductPage from './pages/ProductPage.jsx';
+import PartnerDashboard from './pages/PartnerDashboard.jsx';
 
 // O painel é carregado só quando alguém abre /admin, mantendo a vitrine leve.
 const Admin = lazy(() => import('./admin/Admin.jsx'));
@@ -31,6 +32,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Catalog />} />
           <Route path="/produto/:id" element={<ProductPage />} />
+          <Route path="/parceiro/:token" element={<PartnerDashboard />} />
           <Route
             path="/admin/*"
             element={

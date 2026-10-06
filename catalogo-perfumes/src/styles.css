@@ -351,3 +351,49 @@ code { background: var(--soft); padding: 1px 5px; border-radius: 5px; font-size:
   .coupon-actions .btn, .order-status-actions .btn { flex: 1; }
   .coupon-form .btn { padding-left: 12px; padding-right: 12px; }
 }
+
+
+/* ---------- Afiliados V2 ---------- */
+.field input[type='date'] {
+  width: 100%; padding: 12px 14px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--surface);
+}
+.affiliate-filters {
+  display: grid; grid-template-columns: 1fr; gap: 10px; margin: 14px 0 0;
+}
+.affiliate-filters label {
+  display: flex; flex-direction: column; gap: 5px;
+  font-size: .82rem; color: var(--muted);
+}
+.affiliate-filters select {
+  padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface);
+}
+.affiliate-stats-v2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 800px) {
+  .affiliate-filters { grid-template-columns: 220px 280px; }
+  .affiliate-stats-v2 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+.coupon-admin small { display: block; margin-top: 2px; }
+.coupon-edit-form, .add-coupon-form {
+  width: 100%; display: grid; grid-template-columns: 1fr; gap: 8px;
+}
+.coupon-edit-form input, .add-coupon-form input {
+  min-width: 0; width: 100%; padding: 9px 10px;
+  border-radius: 9px; border: 1px solid var(--line); background: var(--surface);
+}
+.add-coupon-form {
+  margin-top: 10px; padding: 10px; border: 1px dashed var(--line);
+  border-radius: 10px; background: var(--surface);
+}
+.add-coupon-btn { margin-top: 10px; }
+.partner-page { max-width: 900px; }
+.partner-hero { padding: 18px 0 4px; }
+.partner-hero h1 { margin: 3px 0 0; font-size: 2.2rem; }
+.partner-hero p { margin: 4px 0; }
+.partner-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 760px) {
+  .coupon-edit-form { grid-template-columns: 1.3fr .6fr 1fr auto auto; align-items: end; }
+  .add-coupon-form { grid-template-columns: 1.3fr .7fr 1fr auto auto; align-items: center; }
+  .partner-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
