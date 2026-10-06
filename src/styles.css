@@ -229,3 +229,117 @@ code { background: var(--soft); padding: 1px 5px; border-radius: 5px; font-size:
 .admin-tabs { overflow-x: auto; }
 .admin-tab { white-space: nowrap; }
 @media (max-width: 480px) { .import-card { grid-template-columns: 74px minmax(0,1fr); gap: 10px; } .import-photos img { width: 74px; } }
+
+
+/* ---------- Cupons / influenciadores ---------- */
+.coupon-box {
+  margin: 16px 0 4px;
+  padding: 14px;
+  border: 1px dashed var(--gold);
+  border-radius: 14px;
+  background: #fffdf8;
+}
+.coupon-box-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.coupon-box-head p { margin: 2px 0 0; color: var(--muted); font-size: .86rem; }
+.coupon-remove {
+  border: 0;
+  background: transparent;
+  color: var(--err);
+  padding: 2px 0;
+  font-size: .84rem;
+}
+.coupon-form { display: flex; gap: 8px; }
+.coupon-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-transform: uppercase;
+  background: var(--surface);
+}
+.coupon-message { margin: 8px 0 0; color: var(--err); font-size: .85rem; }
+.coupon-message.success { color: var(--ok); }
+.coupon-price { margin-bottom: 8px; }
+.coupon-price .product-price { display: inline-block; margin-right: 8px; }
+.old-price { display: block; color: var(--muted); text-decoration: line-through; font-size: .95rem; }
+.discount-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #e6f3ea;
+  color: var(--ok);
+  font-size: .75rem;
+  font-weight: 700;
+  vertical-align: 3px;
+}
+
+.affiliate-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.affiliate-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 14px 0 16px;
+}
+@media (min-width: 700px) {
+  .affiliate-stats { grid-template-columns: repeat(3, 1fr); }
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+}
+.stat-card span { display: block; color: var(--muted); font-size: .82rem; margin-bottom: 4px; }
+.stat-card strong { font-size: 1.25rem; color: var(--gold-dark); }
+.affiliate-list, .order-list { display: flex; flex-direction: column; gap: 10px; }
+.affiliate-card, .affiliate-order {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fdfbf8;
+}
+.affiliate-card.disabled, .coupon-admin.disabled { opacity: .55; }
+.affiliate-card-top, .affiliate-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.coupon-cards { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.coupon-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  background: var(--surface);
+}
+.coupon-admin strong { display: block; letter-spacing: .08em; }
+.coupon-admin span { display: block; font-size: .8rem; color: var(--ok); }
+.coupon-actions, .order-status-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.order-values { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 8px; font-size: .86rem; }
+.order-status {
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 600;
+}
+.order-status.pending { background: #fff1cc; color: #8a6415; }
+.order-status.approved { background: #e6f3ea; color: var(--ok); }
+.order-status.cancelled { background: #f3e9e7; color: var(--err); }
+
+@media (max-width: 640px) {
+  .affiliate-card-top, .affiliate-order, .coupon-admin { flex-direction: column; }
+  .coupon-actions, .order-status-actions { width: 100%; }
+  .coupon-actions .btn, .order-status-actions .btn { flex: 1; }
+  .coupon-form .btn { padding-left: 12px; padding-right: 12px; }
+}
