@@ -6,6 +6,7 @@ import ProductList from './ProductList.jsx';
 import ProductEditor from './ProductEditor.jsx';
 import Settings from './Settings.jsx';
 import PhotoImport from './PhotoImport.jsx';
+import Affiliates from './Affiliates.jsx';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -26,7 +27,6 @@ function Login() {
           : 'Não foi possível entrar. Verifique sua conexão e tente novamente.',
       );
     }
-    // Em caso de sucesso o guard detecta a sessão e troca a tela.
   }
 
   return (
@@ -62,7 +62,7 @@ function Denied() {
 }
 
 function Guard({ children }) {
-  const [status, setStatus] = useState('loading'); // loading | out | denied | admin
+  const [status, setStatus] = useState('loading');
 
   useEffect(() => {
     let alive = true;
@@ -73,7 +73,6 @@ function Guard({ children }) {
     }
     supabase.auth.getSession().then(({ data }) => check(data.session));
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      // adiado para não chamar o Supabase dentro do próprio callback de autenticação
       setTimeout(() => check(session), 0);
     });
     return () => {
@@ -115,6 +114,9 @@ function Layout() {
           <NavLink end to="/admin" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>
             Produtos
           </NavLink>
+          <NavLink to="/admin/influenciadores" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>
+            Influenciadores & cupons
+          </NavLink>
           <NavLink to="/admin/importar" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>Importar fotos</NavLink>
           <NavLink to="/admin/configuracoes" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>
             Configurações
@@ -136,6 +138,7 @@ export default function Admin() {
           <Route index element={<ProductList />} />
           <Route path="produto/novo" element={<ProductEditor />} />
           <Route path="produto/:id" element={<ProductEditor />} />
+          <Route path="influenciadores" element={<Affiliates />} />
           <Route path="importar" element={<PhotoImport />} />
           <Route path="configuracoes" element={<Settings />} />
         </Route>
