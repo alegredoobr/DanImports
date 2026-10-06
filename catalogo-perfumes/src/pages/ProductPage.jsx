@@ -71,7 +71,7 @@ export default function ProductPage() {
     setActive(0);
     supabase
       .from('products')
-      .select('id, name, price_cents, category, available, description, olfactory_family, olfactory_notes, top_notes, heart_notes, base_notes, product_images(path, position)')
+      .select('id, name, price_cents, volume_ml, category, available, description, olfactory_family, olfactory_notes, top_notes, heart_notes, base_notes, product_images(path, position)')
       .eq('id', id)
       .eq('visible', true)
       .maybeSingle()
@@ -189,7 +189,7 @@ export default function ProductPage() {
     const message = [
       'Olá! Quero fazer este pedido:',
       '',
-      `1x ${product.name}`,
+      `1x ${product.name}${product.volume_ml ? ` — ${product.volume_ml} ml` : ''}`,
       `Valor original: ${formatBRL(order.original_amount_cents)}`,
       `Cupom: ${order.coupon_code}`,
       `Desconto: -${formatBRL(order.discount_amount_cents)}`,
@@ -229,6 +229,7 @@ export default function ProductPage() {
         <div className="info">
           <p className="eyebrow">{categoryLabel(product.category)}</p>
           <h1 className="serif product-name">{product.name}</h1>
+          {product.volume_ml && <p className="product-volume">{product.volume_ml} ml</p>}
           {coupon ? (
             <div className="coupon-price">
               <span className="old-price">{formatBRL(product.price_cents)}</span>

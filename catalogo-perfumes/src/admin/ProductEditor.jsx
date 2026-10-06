@@ -12,7 +12,7 @@ import {
 import { Spinner } from '../components/Common.jsx';
 import { useToast } from '../components/Toast.jsx';
 
-const EMPTY = { name: '', price: '', category: 'masculino', available: true, visible: true, description: '', olfactory_family: '', olfactory_notes: '', top_notes: '', heart_notes: '', base_notes: '' };
+const EMPTY = { name: '', price: '', volume_ml: '', category: 'masculino', available: true, visible: true, description: '', olfactory_family: '', olfactory_notes: '', top_notes: '', heart_notes: '', base_notes: '' };
 const ACCEPT = Object.keys(ALLOWED_TYPES).join(',');
 
 export default function ProductEditor() {
@@ -41,7 +41,7 @@ export default function ProductEditor() {
     setLoadError('');
     const { data, error: err } = await supabase
       .from('products')
-      .select('id, name, price_cents, category, available, visible, description, olfactory_family, olfactory_notes, top_notes, heart_notes, base_notes, product_images(id, path, position)')
+      .select('id, name, price_cents, volume_ml, category, available, visible, description, olfactory_family, olfactory_notes, top_notes, heart_notes, base_notes, product_images(id, path, position)')
       .eq('id', id)
       .maybeSingle();
     setLoading(false);
@@ -57,6 +57,7 @@ export default function ProductEditor() {
       base_notes: data.base_notes || '',
 
       price: centsToInput(data.price_cents),
+      volume_ml: data.volume_ml ? String(data.volume_ml) : '',
       category: data.category,
       available: data.available,
       visible: data.visible,
@@ -167,6 +168,9 @@ export default function ProductEditor() {
     if (!name) return setError('Informe o nome do produto.');
     const cents = parsePriceToCents(form.price);
     if (cents === null) return setError('Preço inválido. Use um formato como 350,00.');
+    const volumeMl = form.volume_ml.trim() === '' ? null : Number(form.volume_ml);
+    if (volumeMl !== null && (!Number.isInteger(volumeMl) || volumeMl <= 0 || volumeMl > 5000))
+      return setError('ML inválido. Informe um número inteiro entre 1 e 5000, ou deixe em branco.');
 
     setSaving(true);
     let productId = id;
@@ -180,6 +184,7 @@ export default function ProductEditor() {
         heart_notes: form.heart_notes.trim(),
         base_notes: form.base_notes.trim(),
         price_cents: cents,
+        volume_ml: volumeMl,
         category: form.category,
         available: form.available,
         visible: form.visible,
@@ -267,15 +272,30 @@ export default function ProductEditor() {
             <input id="price" type="text" inputMode="decimal" placeholder="350,00" value={form.price} onChange={set('price')} required />
           </div>
           <div className="field">
-            <label htmlFor="cat">Categoria</label>
+            <label htmlFor="volume_ml">Volume (ml)</label>
+            <input
+              id="volume_ml"
+              type="number"
+              inputMode="numeric"
+              min="1"
+              max="5000"
+              step="1"
+              placeholder="Ex.: 100"
+              value={form.volume_ml}
+              onChange={set('volume_ml')}
+            />
+            <span className="hint">Opcional. Ex.: 30, 50, 75, 100 ou 200 ml.</span>
+          </div>
+        </div>
+        <div className="field">
+          <label htmlFor="cat">Categoria</label>
             <select id="cat" value={form.category} onChange={set('category')}>
               {CATEGORIES.map((c) => (
                 <option key={c.value} value={c.value}>
                   {c.label}
                 </option>
               ))}
-            </select>
-          </div>
+          </select>
         </div>
         <label className="check">
           <input type="checkbox" checked={form.available} onChange={set('available')} />

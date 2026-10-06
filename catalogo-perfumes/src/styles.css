@@ -397,3 +397,18 @@ code { background: var(--soft); padding: 1px 5px; border-radius: 5px; font-size:
   .add-coupon-form { grid-template-columns: 1.3fr .7fr 1fr auto auto; align-items: center; }
   .partner-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
+
+
+/* ---------- Volume dos produtos ---------- */
+.card-volume {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 500;
+}
+.product-volume {
+  margin: -1px 0 8px;
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 500;
+}

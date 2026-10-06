@@ -47,7 +47,7 @@ export function normalizeWhatsapp(input) {
 
 export function whatsappLink(number, product) {
   if (!number) return null;
-  const text = `Olá! Gostaria de pedir o perfume: ${product.name} — ${formatBRL(product.price_cents)}.`;
+  const text = `Olá! Gostaria de pedir o perfume: ${product.name}${product.volume_ml ? ` — ${product.volume_ml} ml` : ''} — ${formatBRL(product.price_cents)}.`;
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }
 
