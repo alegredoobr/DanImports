@@ -2,10 +2,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { coverPath, supabase } from '../lib/supabase.js';
 import { CATEGORIES, formatBRL, normalize } from '../lib/format.js';
+import { normalizeCouponCode, saveCouponCode } from '../lib/coupons.js';
 import { Brand, ProductImage } from '../components/Common.jsx';
 
-// Cache em memória: ao voltar da página do produto a lista aparece na hora
-// (mantendo a rolagem) e é atualizada em segundo plano.
 let cache = null;
 
 const SORTS = {
@@ -35,6 +34,7 @@ export default function Catalog() {
   const q = params.get('q') || '';
   const cat = params.get('cat') || 'todos';
   const sort = SORTS[params.get('ordem')] ? params.get('ordem') : 'nome';
+  const couponParam = normalizeCouponCode(params.get('cupom'));
 
   const [products, setProducts] = useState(cache);
   const [error, setError] = useState('');
@@ -56,6 +56,10 @@ export default function Catalog() {
   useEffect(() => {
     load();
   }, [load]);
+
+  useEffect(() => {
+    if (couponParam) saveCouponCode(couponParam);
+  }, [couponParam]);
 
   const setParam = (key, value, def) =>
     setParams(
@@ -122,21 +126,15 @@ export default function Catalog() {
         {error && !products && (
           <div className="center-msg">
             <p>{error}</p>
-            <button className="btn" onClick={load}>
-              Tentar novamente
-            </button>
+            <button className="btn" onClick={load}>Tentar novamente</button>
           </div>
         )}
         {!products && !error && <Skeletons />}
         {products && list.length === 0 && (
           <div className="center-msg">
-            <p>
-              {products.length === 0
-                ? 'Nenhum produto disponível no momento.'
-                : 'Nenhum produto encontrado para essa busca.'}
-            </p>
+            <p>{products.length === 0 ? 'Nenhum produto disponível no momento.' : 'Nenhum produto encontrado para essa busca.'}</p>
             {(q || cat !== 'todos') && (
-              <button className="btn ghost" onClick={() => setParams({}, { replace: true })}>
+              <button className="btn ghost" onClick={() => setParams(couponParam ? { cupom: couponParam } : {}, { replace: true })}>
                 Limpar filtros
               </button>
             )}
@@ -145,7 +143,11 @@ export default function Catalog() {
         {products && list.length > 0 && (
           <div className="grid">
             {list.map((p) => (
-              <Link to={`/produto/${p.id}`} className={`card ${p.available ? '' : 'unavailable'}`} key={p.id}>
+              <Link
+                to={`/produto/${p.id}${couponParam ? `?cupom=${encodeURIComponent(couponParam)}` : ''}`}
+                className={`card ${p.available ? '' : 'unavailable'}`}
+                key={p.id}
+              >
                 <div className="card-img">
                   <ProductImage path={p.cover} alt={p.name} />
                   {!p.available && <span className="badge">Indisponível</span>}
