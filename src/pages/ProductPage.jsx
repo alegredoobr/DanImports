@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { publicUrl, supabase } from '../lib/supabase.js';
 import { categoryLabel, formatBRL, whatsappLink } from '../lib/format.js';
@@ -159,10 +159,9 @@ export default function ProductPage() {
     );
 
   const { product, urls } = state;
-  const finalPrice = useMemo(
-    () => coupon ? discountedCents(product.price_cents, coupon.discount_percent) : product.price_cents,
-    [coupon, product.price_cents],
-  );
+  const finalPrice = coupon
+    ? discountedCents(product.price_cents, coupon.discount_percent)
+    : product.price_cents;
   const normalLink = product.available && !coupon ? whatsappLink(settings.whatsapp, product) : null;
 
   async function orderWithCoupon() {
