@@ -43,7 +43,7 @@ export default function Catalog() {
     setError('');
     const { data, error: err } = await supabase
       .from('products')
-      .select('id, name, price_cents, category, available, product_images(path, position)')
+      .select('id, name, price_cents, volume_ml, category, available, product_images(path, position)')
       .eq('visible', true);
     if (err) {
       setError('Não foi possível carregar o catálogo. Verifique sua conexão e tente novamente.');
@@ -154,6 +154,7 @@ export default function Catalog() {
                 </div>
                 <div className="card-body">
                   <h2 className="card-name">{p.name}</h2>
+                  {p.volume_ml && <p className="card-volume">{p.volume_ml} ml</p>}
                   <p className="card-price">{formatBRL(p.price_cents)}</p>
                 </div>
               </Link>
