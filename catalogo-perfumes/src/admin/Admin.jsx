@@ -5,6 +5,7 @@ import { Brand, Spinner } from '../components/Common.jsx';
 import ProductList from './ProductList.jsx';
 import ProductEditor from './ProductEditor.jsx';
 import Settings from './Settings.jsx';
+import Affiliates from './Affiliates.jsx';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -114,6 +115,9 @@ function Layout() {
           <NavLink end to="/admin" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>
             Produtos
           </NavLink>
+          <NavLink to="/admin/influenciadores" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>
+            Influenciadores & cupons
+          </NavLink>
           <NavLink to="/admin/configuracoes" className={({ isActive }) => `admin-tab ${isActive ? 'active' : ''}`}>
             Configurações
           </NavLink>
@@ -134,6 +138,7 @@ export default function Admin() {
           <Route index element={<ProductList />} />
           <Route path="produto/novo" element={<ProductEditor />} />
           <Route path="produto/:id" element={<ProductEditor />} />
+          <Route path="influenciadores" element={<Affiliates />} />
           <Route path="importar" element={<Navigate to="/admin" replace />} />
           <Route path="configuracoes" element={<Settings />} />
         </Route>
