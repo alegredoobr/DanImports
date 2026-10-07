@@ -412,3 +412,42 @@ code { background: var(--soft); padding: 1px 5px; border-radius: 5px; font-size:
   font-size: .95rem;
   font-weight: 500;
 }
+
+
+/* ---------- Checkout Asaas ---------- */
+.payment-actions { margin-top: 16px; }
+.btn.pay {
+  width: 100%;
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+}
+.btn.pay:hover { background: #735923; }
+.payment-note {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: .8rem;
+  text-align: center;
+}
+.order-confirmation h1 { margin: 2px 0 14px; }
+.order-big-status {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.order-big-status.paid { background: #e6f3ea; color: var(--ok); }
+.order-big-status.checkout_created,
+.order-big-status.pending { background: #fff1cc; color: #8a6415; }
+.order-big-status.cancelled,
+.order-big-status.expired,
+.order-big-status.failed { background: #f3e9e7; color: var(--err); }
+.order-summary-items {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 6px 0 14px;
+}
+.order-summary-items div + div { margin-top: 6px; }
+.order-total { font-size: 1.15rem; }
