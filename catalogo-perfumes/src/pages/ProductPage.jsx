@@ -64,6 +64,8 @@ export default function ProductPage() {
   const [couponMessage, setCouponMessage] = useState('');
   const [couponBusy, setCouponBusy] = useState(false);
   const [ordering, setOrdering] = useState(false);
+  const [paymentBusy, setPaymentBusy] = useState(false);
+  const [paymentError, setPaymentError] = useState('');
 
   useEffect(() => {
     let alive = true;
@@ -163,6 +165,33 @@ export default function ProductPage() {
     ? discountedCents(product.price_cents, coupon.discount_percent)
     : product.price_cents;
   const normalLink = product.available && !coupon ? whatsappLink(settings.whatsapp, product) : null;
+
+  async function buyOnline() {
+    if (!product.available || paymentBusy) return;
+    setPaymentBusy(true);
+    setPaymentError('');
+
+    try {
+      const response = await fetch('/api/asaas/create-checkout', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          items: [{ productId: product.id, quantity: 1 }],
+          couponCode: coupon?.code || '',
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || !data?.checkoutUrl) {
+        throw new Error(data?.error || 'Não foi possível iniciar o pagamento.');
+      }
+
+      window.location.href = data.checkoutUrl;
+    } catch (error) {
+      setPaymentError(error?.message || 'Não foi possível iniciar o pagamento.');
+      setPaymentBusy(false);
+    }
+  }
 
   async function orderWithCoupon() {
     if (!coupon || !settings.whatsapp || ordering) return;
@@ -271,6 +300,17 @@ export default function ProductPage() {
           )}
 
           {!product.available && <p className="muted">Este produto está indisponível no momento.</p>}
+
+          {product.available && (
+            <div className="payment-actions">
+              <button className="btn pay" onClick={buyOnline} disabled={paymentBusy}>
+                {paymentBusy ? 'Abrindo pagamento…' : `Comprar online por ${formatBRL(finalPrice)}`}
+              </button>
+              <p className="payment-note">Pagamento seguro pelo Asaas · Pix ou cartão</p>
+              {paymentError && <p className="coupon-message">{paymentError}</p>}
+            </div>
+          )}
+
           {product.available && coupon && settings.whatsapp && (
             <button className="btn wa" onClick={orderWithCoupon} disabled={ordering}>
               {ordering ? 'Preparando pedido…' : `Pedir por ${formatBRL(finalPrice)} no WhatsApp`}
