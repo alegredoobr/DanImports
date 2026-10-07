@@ -1,5 +1,5 @@
-import { getSupabaseAdmin } from './_lib/supabaseAdmin.js';
-import { asaasRequest } from './_lib/asaas.js';
+import { getSupabaseAdmin } from '../_lib/supabaseAdmin.js';
+import { asaasRequest } from '../_lib/asaas.js';
 
 const normalizeCoupon = (value) => String(value || '').trim().toUpperCase().replace(/\s+/g, '');
 

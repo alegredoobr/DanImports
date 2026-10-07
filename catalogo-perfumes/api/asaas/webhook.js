@@ -1,4 +1,4 @@
-import { getSupabaseAdmin } from './_lib/supabaseAdmin.js';
+import { getSupabaseAdmin } from '../_lib/supabaseAdmin.js';
 
 function send(res, status, body) {
   res.status(status).json(body);
