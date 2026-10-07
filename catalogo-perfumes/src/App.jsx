@@ -7,6 +7,7 @@ import { Spinner } from './components/Common.jsx';
 import Catalog from './pages/Catalog.jsx';
 import ProductPage from './pages/ProductPage.jsx';
 import PartnerDashboard from './pages/PartnerDashboard.jsx';
+import OrderPage from './pages/OrderPage.jsx';
 
 // O painel é carregado só quando alguém abre /admin, mantendo a vitrine leve.
 const Admin = lazy(() => import('./admin/Admin.jsx'));
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/" element={<Catalog />} />
           <Route path="/produto/:id" element={<ProductPage />} />
           <Route path="/parceiro/:token" element={<PartnerDashboard />} />
+          <Route path="/pedido/:id" element={<OrderPage />} />
           <Route
             path="/admin/*"
             element={
