@@ -183,7 +183,7 @@ export default function ProductPage() {
 
       const data = await response.json();
       if (!response.ok || !data?.checkoutUrl) {
-        throw new Error(data?.error || 'Não foi possível iniciar o pagamento.');
+        throw new Error(data?.detail || data?.error || 'Não foi possível iniciar o pagamento.');
       }
 
       window.location.href = data.checkoutUrl;
